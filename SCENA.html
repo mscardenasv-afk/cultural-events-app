@@ -314,6 +314,8 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:72px 0 36p
 .zone{background:var(--bg2);border:1.5px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.2s;}
 .zone:hover{border-color:var(--line2);}
 .zone.sel{border-color:var(--coral);background:rgba(255,80,57,.08);box-shadow:0 0 0 1px var(--coral);}
+.zone-ro{cursor:default;opacity:.92;}
+.zone-ro:hover{border-color:var(--line);}
 .zone-n{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
 .zone-p{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:.5px;}
 .zone-a{font-size:11px;color:var(--muted2);margin-top:4px;}
@@ -338,8 +340,24 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:72px 0 36p
 .co-steps{display:flex;gap:8px;margin-bottom:24px;}
 .co-step{flex:1;height:4px;border-radius:4px;background:var(--bg4);}
 .co-step.on{background:var(--coral);}
-.co-logo{font-family:'Anton',sans-serif;font-size:18px;letter-spacing:2px;margin-bottom:4px;}
+.co-logo{font-family:'Anton',sans-serif;font-size:18px;letter-spacing:2px;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;}
 .co-logo .dot{color:var(--coral);}
+.co-secure-badge{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--c-teatro);background:rgba(95,208,138,.12);border:1px solid rgba(95,208,138,.3);padding:5px 10px;border-radius:100px;font-weight:400;}
+.co-stepbar{display:flex;align-items:center;gap:8px;margin-bottom:22px;}
+.co-stepi{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:var(--muted2);white-space:nowrap;}
+.co-stepi .n{width:22px;height:22px;border-radius:50%;background:var(--bg4);color:var(--muted);display:flex;align-items:center;justify-content:center;font-size:12px;font-family:'Space Mono',monospace;transition:.25s;}
+.co-stepi.on{color:var(--text);}
+.co-stepi.on .n{background:var(--coral);color:#fff;}
+.co-stepi.done .n{background:var(--c-teatro);color:#06210f;}
+.co-stepline{flex:1;height:2px;background:var(--bg4);border-radius:2px;}
+.co-blocklbl{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+.co-actions{margin-top:12px;text-align:center;}
+.co-back{background:none;border:none;color:var(--muted);font-size:13px;cursor:pointer;font-family:'Space Grotesk',sans-serif;padding:6px;transition:color .2s;}
+.co-back:hover{color:var(--text);}
+.co-bankselect{width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:10px;background:var(--bg3);color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:15px;outline:none;}
+.zone-check{position:absolute;top:10px;right:10px;width:18px;height:18px;border-radius:50%;border:1.5px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;transition:.2s;}
+.zone.sel .zone-check{background:var(--coral);border-color:var(--coral);}
+.zone{position:relative;}
 .co-h{font-family:'DM Serif Display',serif;font-size:24px;margin-bottom:6px;}
 .co-sub{font-size:13px;color:var(--muted);margin-bottom:24px;}
 .co-summary{background:var(--bg3);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;gap:14px;align-items:center;margin-bottom:24px;}
@@ -438,7 +456,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:72px 0 36p
 <div class="toast" id="toast"><span class="ti">✦</span><span id="toastMsg">Guardado</span></div>
 
 <!-- TOPBAR -->
-<div class="topbar">🎟️ <b>Ed Sheeran, BTS, Iron Maiden y +35 eventos</b> en Lima 2026 — entradas disponibles ahora · <a href="#cartelera">Ver cartelera</a></div>
+<div class="topbar">🎟️ <b>Ed Sheeran, BTS, Iron Maiden y +45 eventos</b> en Lima 2026 — entradas disponibles ahora · <a href="#cartelera">Ver cartelera</a></div>
 
 <!-- NAV -->
 <nav id="nav">
@@ -480,9 +498,9 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:72px 0 36p
 <div class="stats-strip">
   <div class="wrap">
     <div class="stats-grid">
-      <div class="stat"><div class="stat-n" data-count="38">0</div><div class="stat-l">Eventos en cartelera</div></div>
-      <div class="stat"><div class="stat-n" data-count="25">0</div><div class="stat-l">Espacios culturales</div></div>
-      <div class="stat"><div class="stat-n" data-count="10">0</div><div class="stat-l">Distritos cubiertos</div></div>
+      <div class="stat"><div class="stat-n" data-count="48">0</div><div class="stat-l">Eventos en cartelera</div></div>
+      <div class="stat"><div class="stat-n" data-count="30">0</div><div class="stat-l">Espacios culturales</div></div>
+      <div class="stat"><div class="stat-n" data-count="11">0</div><div class="stat-l">Distritos cubiertos</div></div>
       <div class="stat"><div class="stat-n" data-count="7">0</div><div class="stat-l">Categorías</div></div>
     </div>
   </div>
@@ -497,6 +515,9 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:72px 0 36p
         <input id="search" type="text" placeholder="Busca artistas, eventos, recintos o distritos…" oninput="applyFilters()">
       </label>
       <div class="filter-tools">
+        <select class="sel" id="district" onchange="applyFilters()">
+          <option value="all">📍 Todos los distritos</option>
+        </select>
         <select class="sel" id="sort" onchange="applyFilters()">
           <option value="featured">Destacados</option>
           <option value="date">Por fecha</option>
@@ -534,7 +555,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:72px 0 36p
       </div>
     </div>
     <div class="results-meta">
-      <div class="count"><b id="resCount">38</b> eventos encontrados</div>
+      <div class="count"><b id="resCount">48</b> eventos encontrados</div>
     </div>
     <div class="grid" id="grid"></div>
     <div class="loadmore" id="loadmore"><button class="btn btn-ghost btn-lg" onclick="loadMore()">Cargar más eventos ↓</button></div>
@@ -587,7 +608,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:72px 0 36p
       <div class="bento">
         <div class="bento-card tall">
           <div>
-            <div class="bento-n">10</div>
+            <div class="bento-n">11</div>
             <div class="bento-l">distritos con eventos activos esta temporada</div>
           </div>
           <div style="margin-top:24px;">
@@ -595,8 +616,8 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:72px 0 36p
             <div id="distChart"></div>
           </div>
         </div>
-        <div class="bento-card"><div class="bento-n"><span>38</span></div><div class="bento-l">eventos en cartelera</div></div>
-        <div class="bento-card"><div class="bento-n">25</div><div class="bento-l">recintos mapeados</div></div>
+        <div class="bento-card"><div class="bento-n"><span>48</span></div><div class="bento-l">eventos en cartelera</div></div>
+        <div class="bento-card"><div class="bento-n">30</div><div class="bento-l">recintos mapeados</div></div>
       </div>
     </div>
   </div>
@@ -623,7 +644,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:72px 0 36p
   <div class="wrap">
     <div class="cta-band reveal">
       <h2>No te pierdas<br>la escena de Lima</h2>
-      <p>+38 eventos esperándote. Desde megaconciertos en el Estadio Nacional hasta teatro íntimo en Barranco.</p>
+      <p>+48 eventos esperándote. Desde megaconciertos en el Estadio Nacional hasta teatro independiente en Barranco.</p>
       <a href="#cartelera" class="btn btn-coral btn-lg">Ver todos los eventos</a>
     </div>
   </div>
@@ -673,16 +694,38 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:72px 0 36p
 <div class="co-overlay" id="checkout" onclick="if(event.target===this)closeCheckout()">
   <div class="co">
     <button class="co-close" onclick="closeCheckout()">✕</button>
-    <div id="coForm">
-      <div class="co-steps"><div class="co-step on"></div><div class="co-step on"></div><div class="co-step"></div></div>
-      <div class="co-logo">SCENA<span class="dot">.</span></div>
-      <div class="co-h">Finaliza tu compra</div>
-      <div class="co-sub">Pasarela de pago simulada · 100% segura</div>
-      <div class="co-summary">
-        <div class="co-thumb" id="coThumb">🎟️</div>
-        <div class="co-sum-info"><div class="co-sum-t" id="coEvent">—</div><div class="co-sum-d" id="coDetail">—</div></div>
-        <div class="co-sum-p" id="coPrice">S/0</div>
+    <div class="co-logo">SCENA<span class="dot">.</span> <span class="co-secure-badge">🔒 Pago seguro</span></div>
+    <div class="co-stepbar">
+      <div class="co-stepi on" id="coSi1"><span class="n">1</span> Zona</div>
+      <div class="co-stepline"></div>
+      <div class="co-stepi" id="coSi2"><span class="n">2</span> Pago</div>
+      <div class="co-stepline"></div>
+      <div class="co-stepi" id="coSi3"><span class="n">3</span> Listo</div>
+    </div>
+
+    <div class="co-summary">
+      <div class="co-thumb" id="coThumb">🎟️</div>
+      <div class="co-sum-info"><div class="co-sum-t" id="coEvent">—</div><div class="co-sum-d" id="coDetail">—</div></div>
+    </div>
+
+    <!-- STEP 1: ZONA + CANTIDAD -->
+    <div id="coStep1">
+      <div class="co-blocklbl">Elige tu zona</div>
+      <div class="zones" id="coZones"></div>
+      <div class="qty">
+        <div><span class="qty-l">Cantidad de entradas</span><div class="tt-sub" id="coStock">Máx. 10 por compra</div></div>
+        <div class="qctrl"><button class="qbn" onclick="coQty(-1)">−</button><span class="qn" id="coQn">1</span><button class="qbn" onclick="coQty(1)">+</button></div>
       </div>
+      <div class="ticket-total">
+        <div><div class="tt-l">Total a pagar</div><div class="tt-sub">Incluye IGV · cargo por servicio S/0</div></div>
+        <div class="tt-p" id="coTotal1">Elige zona</div>
+      </div>
+      <button class="btn btn-coral btn-block btn-lg" id="coNext" onclick="goCoStep(2)">Continuar al pago →</button>
+    </div>
+
+    <!-- STEP 2: PAGO -->
+    <div id="coStep2" style="display:none;">
+      <div class="co-blocklbl">Método de pago</div>
       <div class="pm-grid">
         <div class="pm sel" onclick="pickPay(this,'card')"><span class="ic">💳</span><span class="nm">Tarjeta</span></div>
         <div class="pm" onclick="pickPay(this,'yape')"><span class="ic">📱</span><span class="nm">Yape / Plin</span></div>
@@ -701,13 +744,24 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:72px 0 36p
         <div class="field"><label>Número de celular</label><input type="text" placeholder="9XX XXX XXX" maxlength="11"></div>
         <div style="text-align:center;padding:16px;background:var(--bg3);border-radius:12px;font-size:13px;color:var(--muted);margin-bottom:14px;">📲 Te enviaremos una solicitud de pago a tu app Yape/Plin</div>
       </div>
-      <button class="btn btn-coral btn-block btn-lg" onclick="processPay()" id="payBtn">Pagar ahora</button>
+      <div id="bankFields" style="display:none;">
+        <div class="field"><label>Selecciona tu banco</label>
+          <select id="coBank" class="co-bankselect"><option>BCP</option><option>BBVA</option><option>Interbank</option><option>Scotiabank</option></select></div>
+        <div style="text-align:center;padding:16px;background:var(--bg3);border-radius:12px;font-size:13px;color:var(--muted);margin-bottom:14px;">🏦 Serás redirigido a la banca en línea de tu banco</div>
+      </div>
+      <div id="cashFields" style="display:none;">
+        <div style="text-align:center;padding:16px;background:var(--bg3);border-radius:12px;font-size:13px;color:var(--muted);margin-bottom:14px;">💵 Genera un código de pago para cancelar en agentes y bodegas autorizadas (válido 24h)</div>
+      </div>
+      <button class="btn btn-coral btn-block btn-lg" onclick="processPay()" id="payBtn">Pagar <span id="coTotal2">—</span></button>
+      <div class="co-actions"><button class="co-back" onclick="goCoStep(1)">← Volver a zonas</button></div>
       <div class="co-secure">🔒 Pago simulado · Tus datos no se almacenan</div>
     </div>
+
+    <!-- STEP 3: ÉXITO -->
     <div class="co-success" id="coSuccess">
       <div class="suc-ic">✓</div>
       <div class="suc-t">¡Listo!</div>
-      <p class="suc-s">Tu compra fue confirmada. Enviamos el e-ticket a tu correo.</p>
+      <p class="suc-s">Tu compra fue confirmada. Enviamos el e-ticket a <b id="etMail">tu correo</b>.</p>
       <div class="eticket">
         <div class="et-lbl">Entrada electrónica</div>
         <div class="et-event" id="etEvent">—</div>
@@ -716,6 +770,8 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:72px 0 36p
           <div><div class="et-lbl">Cantidad</div><div class="et-v" id="etQty">—</div></div>
           <div><div class="et-lbl">Fecha</div><div class="et-v" id="etDate">—</div></div>
           <div><div class="et-lbl">Recinto</div><div class="et-v" id="etVenue">—</div></div>
+          <div><div class="et-lbl">Total pagado</div><div class="et-v" id="etTotal">—</div></div>
+          <div><div class="et-lbl">Método</div><div class="et-v" id="etMethod">—</div></div>
         </div>
         <div class="et-code" id="etCode">—</div>
       </div>
@@ -834,10 +890,10 @@ const EVENTS = [
   zones:[{n:'Campo',p:300},{n:'Preferencial',p:600},{n:'VIP',p:900}],reviews:[]},
 
  {id:'C014',t:'Festival Andino Latinoamericano',cat:'festival',genre:'Folclore / Andino',date:'2026-05-23',dateLabel:'23 MAY 2026',day:'Sábado',time:'2:00 PM',venue:'Coliseo Dibos',district:'San Borja',min:80,max:200,status:'disponible',cap:'8,000',aud:'Familias',
-  wiki:null,lat:-12.0892,lon:-77.0018,vwiki:null,
+  wiki:{title:'Danza de las tijeras',lang:'es'},lat:-12.0892,lon:-77.0018,vwiki:{title:'Danza de las tijeras',lang:'es'},
   yt:'festival andino latinoamericano',
   desc:'<b>8va edición.</b> El festival más grande de música y danza latinoamericana en Lima. Fusión andina, danzas tradicionales y artistas invitados de toda la región en un evento familiar.',
-  cast:[{n:'Elenco internacional',r:'Danza & música',emoji:'💃'}],
+  cast:[{n:'Elenco internacional',r:'Danza & música',wiki:{title:'Danza de las tijeras',lang:'es'}}],
   zones:[{n:'General',p:80},{n:'Preferencial',p:200}],
   reviews:[{n:'María T.',s:4,d:'hace 4 días',v:1,t:'El año pasado fue increíble. Este año promete con más artistas de toda la región andina.',a:'women/81'}]},
 
@@ -886,7 +942,7 @@ const EVENTS = [
 
  // ───── TEATRO / ARTES ─────
  {id:'A001',t:'Yaco & El Loco — En Vivo',cat:'humor',genre:'Stand-Up',date:'2026-05-13',dateLabel:'MAY-JUN 2026',day:'Mié-Dom',time:'8:00 PM',venue:'Lima Comedy Club',district:'Miraflores',min:80,max:80,status:'disponible',cap:'200-300',aud:'Adultos',
-  wiki:null,lat:-12.1217,lon:-77.0278,vwiki:null,
+  wiki:{title:'Yaco Eskenazi',lang:'es'},lat:-12.1217,lon:-77.0278,vwiki:{title:'Yaco Eskenazi',lang:'es'},
   yt:'Yaco Eskenazi stand up',
   desc:'Show de comedia en vivo con dos amigos de la infancia que comparten anécdotas, opiniones y experiencias hilarantes. Mucha interacción con el público. <b>Consumo mínimo S/40 en el local.</b>',
   cast:[{n:'Yaco Eskenazi',r:'Comediante',wiki:{title:'Yaco Eskenazi',lang:'es'}},{n:'Cristian Wagner',r:'El Loco Wagner',emoji:'🎤'}],
@@ -897,19 +953,19 @@ const EVENTS = [
   wiki:{title:'Emilia Drago',lang:'es'},lat:-12.0921,lon:-77.0279,vwiki:null,
   yt:'El Túnel comedia pop rock teatro',
   desc:'Musical pop rock de Alberto Rojas Apel (Argentina), producido por la Asociación Cultural Playbill. Con <b>Emilia Drago, Gisela Ponce de León</b> y un elenco de lujo dirigido por Diego Lombardi.',
-  cast:[{n:'Emilia Drago',r:'Protagonista',wiki:{title:'Emilia Drago',lang:'es'}},{n:'Gisela Ponce de León',r:'Protagonista',wiki:{title:'Gisela Ponce de León',lang:'es'}},{n:'Nicolás Galindo',r:'Elenco',emoji:'🎤'},{n:'Patricia Barreto',r:'Elenco',emoji:'🎭'},{n:'Diego Lombardi',r:'Director',emoji:'🎬'}],
+  cast:[{n:'Emilia Drago',r:'Protagonista',wiki:{title:'Emilia Drago',lang:'es'}},{n:'Gisela Ponce de León',r:'Protagonista',wiki:{title:'Gisela Ponce de León',lang:'es'}},{n:'Patricia Barreto',r:'Elenco',wiki:{title:'Patricia Barreto',lang:'es'}},{n:'Nicolás Galindo',r:'Elenco',emoji:'🎤'},{n:'Diego Lombardi',r:'Director',emoji:'🎬'}],
   zones:[{n:'Mezanine',p:40},{n:'Platea',p:80},{n:'VIP',p:160}],
   reviews:[{n:'Ana R.',s:5,d:'hace 5 días',v:1,t:'Emilia Drago está increíble. El musical te atrapa desde la primera escena, fui dos veces.',a:'women/65'}]},
 
  {id:'A003',t:'FAE Lima 2026 — Artes Escénicas',cat:'festival',genre:'Teatro Internacional',date:'2026-03-04',dateLabel:'4-15 MAR 2026',day:'Variable',time:'Variable',venue:'CCPUCP & sedes aliadas',district:'San Isidro',min:30,max:150,status:'disponible',cap:'Variable',aud:'Todo público',
-  wiki:null,lat:-12.0919,lon:-77.0276,vwiki:null,
+  wiki:{title:'Pontificia Universidad Católica del Perú',lang:'es'},lat:-12.0919,lon:-77.0276,vwiki:{title:'Pontificia Universidad Católica del Perú',lang:'es'},
   yt:'festival artes escénicas teatro',
   desc:'<b>10ª edición del Festival de Artes Escénicas de Lima.</b> Obras nacionales e internacionales y work in progress, organizado por CCPUCP, Británico Cultural, CC UP, CC España, UPC y Teatro La Plaza.',
   cast:[{n:'Compañías nacionales',r:'Teatro',emoji:'🎭'},{n:'Compañías internacionales',r:'Teatro',emoji:'🌍'}],
   zones:[{n:'Función individual',p:30},{n:'Pase de festival',p:150}],reviews:[]},
 
  {id:'A006',t:'Feliz Cumpleaños, Doña Zoila',cat:'teatro',genre:'Comedia',date:'2026-05-10',dateLabel:'VIGENTE-JUN 2026',day:'Jue-Dom',time:'8:30 PM',venue:'Teatro Universidad de Lima',district:'Santiago de Surco',min:35,max:60,status:'disponible',cap:'Variable',aud:'Adultos',
-  wiki:null,lat:-12.0820,lon:-76.9706,vwiki:null,
+  wiki:{title:'Universidad de Lima',lang:'es'},lat:-12.0820,lon:-76.9706,vwiki:{title:'Universidad de Lima',lang:'es'},
   yt:'teatro comedia peruana',
   desc:'Comedia de Diego Salinas producida por el Centro Cultural de la Universidad de Lima. Con <b>Laly Goyzueta, Patricia Frayssinet</b> y un elenco de primer nivel.',
   cast:[{n:'Laly Goyzueta',r:'Doña Zoila',emoji:'🎭'},{n:'Patricia Frayssinet',r:'Elenco',emoji:'🌟'},{n:'Amparo Brambilla',r:'Elenco',emoji:'🎭'},{n:'Diego Salinas',r:'Autor / Elenco',emoji:'✍️'}],
@@ -935,19 +991,19 @@ const EVENTS = [
   wiki:{title:'Mónica Sánchez (actriz)',lang:'es'},lat:-12.1516,lon:-77.0231,vwiki:null,
   yt:'teatro drama Barranco',
   desc:'Obra de Andrew Bovell (Australia): una emotiva historia familiar producida por la Asociación Cultural Drama. Con <b>Mónica Sánchez, Carlos Mesta y Karina Jordán.</b>',
-  cast:[{n:'Mónica Sánchez',r:'Protagonista',wiki:{title:'Mónica Sánchez (actriz)',lang:'es'}},{n:'Carlos Mesta',r:'Elenco',emoji:'🎭'},{n:'Karina Jordán',r:'Elenco',emoji:'🌟'},{n:"K'intu Galiano",r:'Director',emoji:'🎬'}],
+  cast:[{n:'Mónica Sánchez',r:'Protagonista',wiki:{title:'Mónica Sánchez (actriz)',lang:'es'}},{n:'Karina Jordán',r:'Elenco',wiki:{title:'Karina Jordán',lang:'es'}},{n:'Carlos Mesta',r:'Elenco',emoji:'🎭'},{n:"K'intu Galiano",r:'Director',emoji:'🎬'}],
   zones:[{n:'Estudiante',p:28},{n:'Jubilado',p:40},{n:'General',p:65}],
   reviews:[{n:'Pilar V.',s:5,d:'hace 3 días',v:1,t:'Mónica Sánchez te rompe el corazón en escena. Obra imprescindible, lloré al final.',a:'women/49'}]},
 
  {id:'A013',t:'La Coima — Comedia Política',cat:'teatro',genre:'Comedia Política',date:'2026-05-20',dateLabel:'VIGENTE-JUN 2026',day:'Vie-Dom',time:'8:00 PM',venue:'Teatro (por confirmar)',district:'Lima',min:30,max:60,status:'disponible',cap:'Variable',aud:'Adultos',
-  wiki:null,lat:-12.0464,lon:-77.0428,vwiki:null,
+  wiki:{title:'Nikolái Gógol',lang:'es'},lat:-12.0464,lon:-77.0428,vwiki:{title:'Nikolái Gógol',lang:'es'},
   yt:'teatro comedia política',
   desc:'Inspirada en "El Inspector" de Gógol, una sátira sobre la corrupción en clave peruana. Nueva temporada con elenco renovado, dirigida por Martín Velásquez Marvelat.',
   cast:[{n:'Elenco renovado',r:'Actuación',emoji:'🎭'},{n:'Martín Velásquez',r:'Director',emoji:'🎬'}],
   zones:[{n:'Estudiante',p:30},{n:'General',p:60}],reviews:[]},
 
  {id:'A014',t:'Tu Cita con la Historia',cat:'teatro',genre:'Visita Teatralizada',date:'2026-05-15',dateLabel:'VIGENTE-DIC 2026',day:'Vie-Sáb',time:'6:00-8:40 PM',venue:'Convento Santo Domingo',district:'Cercado de Lima',min:49,max:49,status:'disponible',cap:'Variable',aud:'Familias',
-  wiki:null,lat:-12.0455,lon:-77.0316,vwiki:null,
+  wiki:{title:'Convento de Santo Domingo (Lima)',lang:'es'},lat:-12.0455,lon:-77.0316,vwiki:{title:'Convento de Santo Domingo (Lima)',lang:'es'},
   yt:'visita teatralizada convento Lima',
   desc:'<b>Experiencia nocturna inmersiva</b> en un convento del siglo XVI. Recorre la historia acompañado de personajes como Santa Rosa de Lima, San Martín, el Virrey Amat y La Perricholi.',
   cast:[{n:'Santa Rosa de Lima',r:'Personaje',emoji:'🌸'},{n:'La Perricholi',r:'Personaje',emoji:'💃'},{n:'Virrey Amat',r:'Personaje',emoji:'👑'}],
@@ -955,35 +1011,35 @@ const EVENTS = [
   reviews:[{n:'Alejandro T.',s:5,d:'hace 2 semanas',v:1,t:'Una experiencia única. El convento de noche con actores es mágico, recomendadísimo.',a:'men/36'}]},
 
  {id:'A015',t:'Festival de Cine Francés',cat:'cine',genre:'Festival Internacional',date:'2026-06-01',dateLabel:'VIGENTE-JUN 2026',day:'Variable',time:'5:00-9:00 PM',venue:'Museo de la Nación / Alianza Francesa',district:'San Borja',min:0,max:12,status:'disponible',cap:'Variable',aud:'Todo público',
-  wiki:null,lat:-12.0878,lon:-77.0037,vwiki:null,
+  wiki:{title:'Museo de la Nación',lang:'es'},lat:-12.0878,lon:-77.0037,vwiki:{title:'Museo de la Nación',lang:'es'},
   yt:'festival cine francés Lima',
   desc:'Ciclo de cine con estrenos franceses en varias sedes. <b>Funciones gratuitas del DAFO.</b> Con directoras como Emma Benestan y Louise Courvoisier.',
   cast:[{n:'Cine francés',r:'Estrenos',emoji:'🎬'},{n:'Directores invitados',r:'Charlas',emoji:'🎥'}],
   zones:[{n:'Funciones DAFO',p:0},{n:'Estudiante',p:7},{n:'General',p:12}],reviews:[]},
 
  {id:'A017',t:'Wasipi — Violeta Quispe',cat:'museo',genre:'Arte Visual',date:'2026-05-01',dateLabel:'VIGENTE-JUL 2026',day:'Mar-Sáb',time:'Horario AF',venue:'Alianza Francesa de Lima',district:'Miraflores',min:0,max:0,status:'gratis',cap:'200-300',aud:'Todo público',
-  wiki:null,lat:-12.1150,lon:-77.0286,vwiki:null,
+  wiki:{title:'Alianza Francesa',lang:'es'},lat:-12.1150,lon:-77.0286,vwiki:{title:'Alianza Francesa',lang:'es'},
   yt:'arte andino contemporáneo Perú',
   desc:'Exposición individual de la artista Violeta Quispe Yupari sobre identidad andina y culpa doméstica. <b>Ingreso libre.</b> En diálogo entre español y quechua, curada por Gabriela Germaná.',
   cast:[{n:'Violeta Quispe',r:'Artista',emoji:'🎨'},{n:'Gabriela Germaná',r:'Curadora',emoji:'🖼️'}],
   zones:[{n:'Ingreso libre',p:0}],reviews:[]},
 
  {id:'A018',t:'El Viaje de Cleo',cat:'teatro',genre:'Teatro Familiar',date:'2026-05-15',dateLabel:'VIGENTE-JUN 2026',day:'Sáb-Dom',time:'4:00 / 8:00 PM',venue:'Jazz Zone',district:'Miraflores',min:25,max:45,status:'disponible',cap:'150',aud:'Familias',
-  wiki:null,lat:-12.1289,lon:-77.0281,vwiki:null,
+  wiki:{title:'Teatro',lang:'es'},lat:-12.1289,lon:-77.0281,vwiki:{title:'Teatro',lang:'es'},
   yt:'teatro familiar infantil Lima',
   desc:'<b>Teatro familiar</b> apto para niños y adultos. Javier Echevarría Escribens presenta esta obra mágica sobre un viaje al corazón del cielo. Dos funciones por día.',
   cast:[{n:'Javier Echevarría',r:'Protagonista',emoji:'✨'},{n:'Armando Machuca',r:'Director',emoji:'🎬'}],
   zones:[{n:'Niños',p:25},{n:'Adultos',p:45}],reviews:[]},
 
  {id:'A019',t:'Festival Lima Docs',cat:'cine',genre:'Cine Documental',date:'2026-06-01',dateLabel:'VIGENTE-JUN 2026',day:'Variable',time:'5:30 PM',venue:'Sala Ventana Indiscreta — ULima',district:'Santiago de Surco',min:10,max:15,status:'disponible',cap:'Variable',aud:'Todo público',
-  wiki:null,lat:-12.0820,lon:-76.9706,vwiki:null,
+  wiki:{title:'Universidad de Lima',lang:'es'},lat:-12.0820,lon:-76.9706,vwiki:{title:'Universidad de Lima',lang:'es'},
   yt:'festival cine documental',
   desc:'Festival de cine documental con cortometrajes amazónicos, largometrajes nacionales e internacionales y debates con los directores tras cada función.',
   cast:[{n:'Documentalistas peruanos',r:'Directores',emoji:'🎬'},{n:'Cine internacional',r:'Selección',emoji:'🌍'}],
   zones:[{n:'Estudiante',p:10},{n:'General',p:15}],reviews:[]},
 
  {id:'A020',t:'Broadway in Concert',cat:'teatro',genre:'Musical Broadway',date:'2026-11-15',dateLabel:'15 NOV 2026',day:'Domingo',time:'11:30 / 16:00 / 19:30',venue:'Teatro Unifé',district:'San Isidro',min:60,max:100,status:'disponible',cap:'Variable',aud:'Familias',
-  wiki:null,lat:-12.0921,lon:-77.0279,vwiki:null,
+  wiki:{title:'Broadway theatre',lang:'en'},lat:-12.0921,lon:-77.0279,vwiki:{title:'Broadway theatre',lang:'en'},
   yt:'Broadway in concert musical',
   desc:'<b>Tres funciones en un día.</b> Lo mejor de los musicales de Broadway interpretado en español por una compañía española. Una experiencia para toda la familia.',
   cast:[{n:'Compañía española',r:'Elenco Broadway',emoji:'🎭'}],
@@ -998,7 +1054,7 @@ const EVENTS = [
   zones:[{n:'Niños',p:50},{n:'Adultos',p:100},{n:'Premium',p:150}],reviews:[]},
 
  {id:'T002',t:'Talleres CCPUCP 2026',cat:'taller',genre:'Formación Cultural',date:'2026-01-01',dateLabel:'TODO EL AÑO',day:'Variable',time:'Según horario',venue:'Centro Cultural PUCP',district:'San Isidro',min:80,max:200,status:'disponible',cap:'Cupos limitados',aud:'Todas las edades',
-  wiki:null,lat:-12.0919,lon:-77.0276,vwiki:null,
+  wiki:{title:'Pontificia Universidad Católica del Perú',lang:'es'},lat:-12.0919,lon:-77.0276,vwiki:{title:'Pontificia Universidad Católica del Perú',lang:'es'},
   yt:'taller cultural teatro danza',
   desc:'<b>Más de 45 cursos:</b> teatro, marinera, fotografía, yoga, clown, improvisación y cine. Para niños desde 3 años y adultos, en modalidad presencial y virtual.',
   cast:[{n:'Docentes PUCP',r:'Profesores',emoji:'📚'},{n:'Artistas invitados',r:'Talleristas',emoji:'🎭'}],
@@ -1013,11 +1069,86 @@ const EVENTS = [
   reviews:[{n:'Sandra C.',s:5,d:'hace 3 semanas',v:1,t:'Lugar hermoso y completamente gratis. La arquitectura de la ex estación es impresionante.',a:'women/57'}]},
 
  {id:'T004',t:'Museo Central (MUCEN)',cat:'museo',genre:'Museo BCRP',date:'2026-01-01',dateLabel:'PERMANENTE',day:'Mar-Dom',time:'10:00-17:00',venue:'Museo Central BCRP',district:'Cercado de Lima',min:0,max:0,status:'gratis',cap:'300+',aud:'Todo público',
-  wiki:null,lat:-12.0506,lon:-77.0335,vwiki:null,
+  wiki:{title:'Banco Central de Reserva del Perú',lang:'es'},lat:-12.0506,lon:-77.0335,vwiki:{title:'Banco Central de Reserva del Perú',lang:'es'},
   yt:'Museo Central BCRP Lima',
   desc:'<b>Ingreso libre.</b> Colecciones numismáticas, arte peruano y exposiciones temporales del Banco Central. Ofrece talleres dominicales gratuitos para toda la familia.',
   cast:[{n:'Colección BCRP',r:'Arte & numismática',emoji:'🏛️'}],
-  zones:[{n:'Ingreso libre',p:0}],reviews:[]}
+  zones:[{n:'Ingreso libre',p:0}],reviews:[]},
+
+ // ───── INDEPENDIENTES / ESCENA LOCAL ─────
+ {id:'A004',t:'Seminario de Propiedad Intelectual',cat:'taller',genre:'Formación / Industrias Creativas',date:'2026-06-04',dateLabel:'4-5 JUN 2026',day:'Jue-Vie',time:'9:00 AM-1:00 PM',venue:'Centro Cultural PUCP',district:'San Isidro',min:0,max:120,status:'disponible',cap:'120',aud:'Profesionales',
+  wiki:{title:'Pontificia Universidad Católica del Perú',lang:'es'},lat:-12.0919,lon:-77.0276,vwiki:{title:'Pontificia Universidad Católica del Perú',lang:'es'},
+  yt:'propiedad intelectual industrias culturales',
+  desc:'Seminario gratuito sobre derechos de autor y propiedad intelectual aplicados a las industrias creativas y culturales. <b>Funciones DAFO con cupos limitados.</b> Dirigido a gestores, artistas y emprendedores culturales.',
+  cast:[{n:'Especialistas DAFO',r:'Ponentes',emoji:'⚖️'},{n:'Gestores culturales',r:'Panelistas',emoji:'📚'}],
+  zones:[{n:'Ingreso libre',p:0},{n:'Certificado',p:120}],reviews:[]},
+
+ {id:'A007',t:'Temporada de Teatro — CC Universidad del Pacífico',cat:'teatro',genre:'Teatro Contemporáneo',date:'2026-05-22',dateLabel:'VIGENTE-JUL 2026',day:'Jue-Sáb',time:'8:00 PM',venue:'Centro Cultural UP',district:'Jesús María',min:25,max:50,status:'disponible',cap:'200',aud:'Adultos',
+  wiki:{title:'Universidad del Pacífico (Perú)',lang:'es'},lat:-12.0792,lon:-77.0497,vwiki:{title:'Universidad del Pacífico (Perú)',lang:'es'},
+  yt:'teatro contemporáneo independiente Lima',
+  desc:'Programación de teatro independiente del Centro Cultural de la Universidad del Pacífico. Dramaturgia nacional emergente y montajes contemporáneos con elencos jóvenes de la escena limeña.',
+  cast:[{n:'Elenco emergente',r:'Actuación',emoji:'🎭'},{n:'Dramaturgia nacional',r:'Autoría',emoji:'✍️'}],
+  zones:[{n:'Estudiante',p:25},{n:'General',p:50}],
+  reviews:[{n:'Gabriel S.',s:4,d:'hace 1 semana',v:1,t:'Teatro independiente de calidad y a buen precio. Me encanta apoyar a los elencos jóvenes.',a:'men/12'}]},
+
+ {id:'A011',t:'MALI — Visita "Uno a Uno"',cat:'museo',genre:'Mediación Artística',date:'2026-05-18',dateLabel:'VIGENTE-DIC 2026',day:'Sáb-Dom',time:'11:00 AM / 4:00 PM',venue:'MALI — Palacio de la Exposición',district:'Cercado de Lima',min:20,max:35,status:'disponible',cap:'Grupos reducidos',aud:'Todo público',
+  wiki:{title:'Museo de Arte de Lima',lang:'es'},lat:-12.0652,lon:-77.0355,vwiki:{title:'Museo de Arte de Lima',lang:'es'},
+  yt:'mediación cultural museo de arte de lima',
+  desc:'Experiencia de mediación personalizada: recorre la colección del MALI acompañado de un mediador que adapta el recorrido a tus intereses. Cupos muy reducidos para una visita íntima.',
+  cast:[{n:'Mediadores MALI',r:'Guías de arte',emoji:'🖼️'}],
+  zones:[{n:'Estudiante',p:20},{n:'General',p:35}],reviews:[]},
+
+ {id:'A016',t:'Rituales para Despedirse',cat:'teatro',genre:'Teatro / Danza',date:'2026-06-12',dateLabel:'12-21 JUN 2026',day:'Vie-Dom',time:'8:00 PM',venue:'Centro Cultural PUCP',district:'San Isidro',min:30,max:55,status:'pocas',cap:'250',aud:'Adultos',
+  wiki:{title:'Pontificia Universidad Católica del Perú',lang:'es'},lat:-12.0919,lon:-77.0276,vwiki:{title:'Pontificia Universidad Católica del Perú',lang:'es'},
+  yt:'teatro danza contemporánea Lima',
+  desc:'<b>Pieza de teatro-danza contemporánea</b> sobre la memoria, el duelo y la despedida. Una propuesta sensorial de la nueva escena independiente limeña. <b>Últimas funciones.</b>',
+  cast:[{n:'Compañía independiente',r:'Intérpretes',emoji:'🩰'},{n:'Dirección colectiva',r:'Creación',emoji:'🎬'}],
+  zones:[{n:'Estudiante',p:30},{n:'General',p:55}],reviews:[]},
+
+ {id:'C021',t:'Los Mirlos — Cumbia Amazónica',cat:'concierto',genre:'Cumbia / Chicha',date:'2026-07-18',dateLabel:'18 JUL 2026',day:'Sábado',time:'9:00 PM',venue:'Anfiteatro Parque de la Exposición',district:'Cercado de Lima',min:60,max:180,status:'disponible',cap:'3,000',aud:'Todo público',
+  wiki:{title:'Los Mirlos',lang:'es'},lat:-12.0679,lon:-77.0367,vwiki:{title:'Parque de la Exposición',lang:'es'},
+  yt:'Los Mirlos cumbia amazónica en vivo',
+  desc:'<b>Leyendas de la cumbia amazónica.</b> Los Mirlos celebran más de 50 años de chicha peruana con sus clásicos "La Danza de los Mirlos" y "El Milagro Verde". Una fiesta tropical bajo las estrellas.',
+  cast:[{n:'Los Mirlos',r:'Banda',wiki:{title:'Los Mirlos',lang:'es'}}],
+  zones:[{n:'General',p:60},{n:'Preferencial',p:120},{n:'VIP',p:180}],
+  reviews:[{n:'Wilmer A.',s:5,d:'hace 5 días',v:1,t:'¡La cumbia amazónica más auténtica! Los Mirlos nunca decepcionan, pura energía peruana.',a:'men/19'}]},
+
+ {id:'C022',t:'Eva Ayllón — Criolla de Corazón',cat:'concierto',genre:'Música Criolla',date:'2026-08-30',dateLabel:'30 AGO 2026',day:'Domingo',time:'7:00 PM',venue:'Gran Teatro Nacional',district:'San Borja',min:90,max:280,status:'disponible',cap:'1,500',aud:'Todo público',
+  wiki:{title:'Eva Ayllón',lang:'es'},lat:-12.0900,lon:-77.0001,vwiki:{title:'Gran Teatro Nacional (Perú)',lang:'es'},
+  yt:'Eva Ayllón música criolla en vivo',
+  desc:'<b>La gran dama de la música criolla.</b> Eva Ayllón presenta un repertorio que recorre el vals, el festejo y el landó en el escenario más imponente del país. Una noche de identidad y emoción peruana.',
+  cast:[{n:'Eva Ayllón',r:'Artista principal',wiki:{title:'Eva Ayllón',lang:'es'}}],
+  zones:[{n:'Galería',p:90},{n:'Platea',p:180},{n:'VIP',p:280}],
+  reviews:[{n:'Carmen R.',s:5,d:'hace 1 semana',v:1,t:'Eva es patrimonio vivo del Perú. Verla en el Gran Teatro Nacional será inolvidable.',a:'women/22'}]},
+
+ {id:'C023',t:'Susana Baca — Afroperuano',cat:'concierto',genre:'Afroperuano',date:'2026-09-19',dateLabel:'19 SEP 2026',day:'Sábado',time:'8:00 PM',venue:'Teatro Municipal de Lima',district:'Cercado de Lima',min:80,max:220,status:'disponible',cap:'1,181',aud:'Todo público',
+  wiki:{title:'Susana Baca',lang:'es'},lat:-12.0492,lon:-77.0333,vwiki:{title:'Teatro Municipal de Lima',lang:'es'},
+  yt:'Susana Baca afroperuano en vivo',
+  desc:'<b>Tres veces ganadora del Latin Grammy.</b> Susana Baca eleva la música afroperuana al escenario del histórico Teatro Municipal, con su voz inconfundible y un ensamble de percusión cajón en vivo.',
+  cast:[{n:'Susana Baca',r:'Artista principal',wiki:{title:'Susana Baca',lang:'es'}}],
+  zones:[{n:'Galería',p:80},{n:'Palco',p:150},{n:'Platea',p:220}],reviews:[]},
+
+ {id:'C024',t:'Bareto — Tropical Fest',cat:'concierto',genre:'Cumbia / Fusión',date:'2026-10-24',dateLabel:'24 OCT 2026',day:'Sábado',time:'9:00 PM',venue:'C.C. Leguía',district:'Jesús María',min:70,max:160,status:'disponible',cap:'3,000',aud:'Jóvenes / Adultos',
+  wiki:{title:'Bareto',lang:'es'},lat:-12.0735,lon:-77.0469,vwiki:{title:'Bareto',lang:'es'},
+  yt:'Bareto en vivo cumbia',
+  desc:'La banda peruana que revivió la cumbia para una nueva generación. Bareto trae su fusión de chicha, reggae y rock en una noche bailable e imperdible de la escena independiente local.',
+  cast:[{n:'Bareto',r:'Banda',wiki:{title:'Bareto',lang:'es'}}],
+  zones:[{n:'General',p:70},{n:'Preferencial',p:120},{n:'VIP',p:160}],reviews:[]},
+
+ {id:'A021',t:'Lima Independiente — Cine Peruano',cat:'cine',genre:'Cine Independiente',date:'2026-08-07',dateLabel:'7-16 AGO 2026',day:'Variable',time:'4:00-10:00 PM',venue:'Centro Cultural PUCP',district:'San Isidro',min:8,max:18,status:'disponible',cap:'Variable',aud:'Todo público',
+  wiki:{title:'Cine del Perú',lang:'es'},lat:-12.0919,lon:-77.0276,vwiki:{title:'Pontificia Universidad Católica del Perú',lang:'es'},
+  yt:'festival cine independiente peruano',
+  desc:'<b>Festival de cine independiente.</b> Una selección de óperas primas, cortometrajes y documentales del cine peruano emergente, con coloquios y la presencia de sus realizadores tras cada proyección.',
+  cast:[{n:'Realizadores peruanos',r:'Directores',emoji:'🎬'},{n:'Cine emergente',r:'Selección oficial',emoji:'🎥'}],
+  zones:[{n:'Estudiante',p:8},{n:'General',p:18}],reviews:[]},
+
+ {id:'A022',t:'Noche de Museos — Ruta Cultural',cat:'museo',genre:'Ruta Nocturna',date:'2026-05-31',dateLabel:'31 MAY 2026',day:'Sábado',time:'6:00-11:00 PM',venue:'Centro Histórico de Lima',district:'Cercado de Lima',min:0,max:0,status:'gratis',cap:'Multisede',aud:'Todo público',
+  wiki:{title:'Centro histórico de Lima',lang:'es'},lat:-12.0464,lon:-77.0309,vwiki:{title:'Centro histórico de Lima',lang:'es'},
+  yt:'noche de los museos Lima',
+  desc:'<b>Ingreso libre a más de 20 museos y casas culturales</b> en una sola noche. Recorre el Centro Histórico con actividades, conciertos y visitas guiadas gratuitas. La gran fiesta cultural de Lima.',
+  cast:[{n:'Museos de Lima',r:'Sedes participantes',emoji:'🏛️'}],
+  zones:[{n:'Ingreso libre',p:0}],
+  reviews:[{n:'Diego F.',s:5,d:'hace 2 semanas',v:1,t:'La mejor iniciativa cultural del año. Recorrí 6 museos gratis en una noche, increíble.',a:'men/76'}]}
 ];
 
 /* CATEGORÍA META */
@@ -1094,7 +1225,7 @@ function getWikiImg(w,cb){
 /* ════════════════════════════════════════════════════════════════
    STATE
 ════════════════════════════════════════════════════════════════ */
-let curCat='all',curSort='featured',curView='grid',curSearch='',shown=9;
+let curCat='all',curSort='featured',curView='grid',curSearch='',curDistrict='all',shown=9;
 const saved=new Set();
 let modalEvt=null,selZone=null,qty=1,payMethod='card',mapCat='all',mainMap,modalMap,mapLayer=[];
 const FEATURED=['C001','C004','C006','C008']; // hero slides
@@ -1182,6 +1313,7 @@ function setView(v){curView=v;document.getElementById('vGrid').classList.toggle(
 window.setCat=setCat;window.setView=setView;
 function getFiltered(){
   let a=EVENTS.filter(e=>curCat==='all'||e.cat===curCat);
+  if(curDistrict!=='all')a=a.filter(e=>e.district===curDistrict);
   if(curSearch){const q=curSearch.toLowerCase();a=a.filter(e=>(e.t+e.venue+e.district+e.genre).toLowerCase().includes(q));}
   if(curSort==='date')a.sort((x,y)=>x.date.localeCompare(y.date));
   else if(curSort==='price-asc')a.sort((x,y)=>x.min-y.min);
@@ -1193,6 +1325,7 @@ function getFiltered(){
 function applyFilters(){
   curSearch=document.getElementById('search').value;
   curSort=document.getElementById('sort').value;
+  curDistrict=document.getElementById('district').value;
   const all=getFiltered();
   document.getElementById('resCount').textContent=all.length;
   renderGrid(all.slice(0,shown));
@@ -1254,7 +1387,6 @@ function openModal(id){
   // load hero + cast images
   loadModalImgs(e);
   setTimeout(()=>initModalMap(e),250);
-  updateTotal();
 }
 window.openModal=openModal;
 function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';if(modalMap){modalMap.remove();modalMap=null;}}
@@ -1275,11 +1407,10 @@ function modalHTML(e){
     <div class="rev-summary"><div><div class="rev-score">${avg.toFixed(1)}</div></div><div><div class="rev-stars-big">${'★'.repeat(Math.round(avg))}${'☆'.repeat(5-Math.round(avg))}</div><div class="rev-count">${e.reviews.length} opinión${e.reviews.length>1?'es':''} de asistentes</div></div></div>
     ${e.reviews.map(r=>`<div class="rev"><img class="rev-av" src="https://randomuser.me/api/portraits/${r.a}.jpg" alt="${r.n}" onerror="this.style.background='${c.color}'">
       <div style="flex:1;"><div class="rev-h"><span class="rev-name">${r.n}</span>${r.v?'<span class="rev-ver">✓ Verificado</span>':''}<span class="rev-stars">${'★'.repeat(r.s)}${'☆'.repeat(5-r.s)}</span><span class="rev-date">${r.d}</span></div><div class="rev-txt">${r.t}</div></div></div>`).join('')}</div>`:'';
-  const zonesH=e.status==='agotado'?`<p style="color:var(--muted);font-size:14px;">Este evento está agotado. Síguelo para enterarte de reventas o nuevas fechas.</p>`:
-    (e.zones&&e.zones.length?`<div class="zones">${e.zones.map((z,i)=>`<div class="zone" id="z_${i}" onclick="pickZone(${i})"><div class="zone-n">${z.n}</div><div class="zone-p">${z.p===0?'Gratis':'S/'+z.p}</div><div class="zone-a">${z.p===0?'Entrada libre':'Disponible'}</div></div>`).join('')}</div>
-    <div class="qty"><span class="qty-l">Cantidad de entradas</span><div class="qctrl"><button class="qbn" onclick="chQty(-1)">−</button><span class="qn" id="qn">1</span><button class="qbn" onclick="chQty(1)">+</button></div></div>
-    <div class="ticket-total"><div><div class="tt-l">Total</div><div class="tt-sub">Incluye IGV · cargo por servicio aprox. S/35</div></div><div class="tt-p" id="ttp">—</div></div>
-    <button class="btn btn-coral btn-block btn-lg" onclick="openCheckout()">Comprar ahora →</button>
+  const zonesH=e.status==='agotado'?`<p style="color:var(--muted);font-size:14px;">Este evento está <b style="color:#FF6B6B">agotado</b>. Síguelo para enterarte de reventas o nuevas fechas.</p>`:
+    (e.zones&&e.zones.length?`<div class="zones">${e.zones.map((z)=>`<div class="zone zone-ro"><div class="zone-n">${z.n}</div><div class="zone-p">${z.p===0?'Gratis':'S/'+z.p}</div><div class="zone-a">${z.p===0?'Entrada libre':'Disponible'}</div></div>`).join('')}</div>
+    <div class="ticket-total"><div><div class="tt-l">${e.min===0?'Acceso':'Precios desde'}</div><div class="tt-sub">Incluye IGV · elige zona y cantidad al pagar</div></div><div class="tt-p">${e.min===0?'Gratis':'S/'+e.min}</div></div>
+    <button class="btn btn-coral btn-block btn-lg" onclick="openCheckout()">${e.min===0?'Reservar entrada →':'Comprar entradas →'}</button>
     <div class="pay-row"><span class="pay-chip">VISA</span><span class="pay-chip">Mastercard</span><span class="pay-chip">Amex</span><span class="pay-chip">Yape</span><span class="pay-chip">Plin</span><span class="pay-chip">BCP</span><span class="pay-chip">BBVA</span><span class="pay-chip">Interbank</span></div>`:'<p style="color:var(--muted)">Ingreso libre, sin necesidad de reserva.</p>');
 
   return `<button class="modal-close" onclick="closeModal()">✕</button>
@@ -1330,51 +1461,108 @@ function initModalMap(e){
 }
 function pin(color){return L.divIcon({className:'',html:`<div style="background:${color};width:16px;height:16px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.6)"></div>`,iconSize:[16,16],iconAnchor:[8,16]});}
 
-/* ticket */
-function pickZone(i){selZone={...modalEvt.zones[i],i};document.querySelectorAll('.zone').forEach((z,j)=>z.classList.toggle('sel',j===i));updateTotal();}
-function chQty(d){qty=Math.max(1,Math.min(10,qty+d));const n=document.getElementById('qn');if(n)n.textContent=qty;updateTotal();}
-function updateTotal(){const el=document.getElementById('ttp');if(!el)return;if(!selZone){el.textContent='Elige zona';return;}const t=selZone.p*qty;el.textContent=selZone.p===0?'Gratis':'S/'+t;}
-window.pickZone=pickZone;window.chQty=chQty;
-
 /* ════════════════════════════════════════════════════════════════
-   CHECKOUT
+   CHECKOUT — pasarela de 3 pasos (zona → pago → confirmación)
 ════════════════════════════════════════════════════════════════ */
+const FEE=8; // cargo por servicio simulado por entrada (S/)
+function coZonesList(e){
+  // si el evento no define zonas, generar una "general"
+  if(e.zones&&e.zones.length)return e.zones;
+  if(e.min===0)return [{n:'Ingreso libre',p:0}];
+  return [{n:'Entrada general',p:e.min}];
+}
 function openCheckout(){
-  const e=modalEvt;
-  if(!selZone&&e.min>0){toast('Primero elige una zona');return;}
-  const z=selZone||{n:'Entrada general',p:e.min};const total=z.p*qty;
+  const e=modalEvt;if(!e)return;
+  if(e.status==='agotado'){toast('Este evento está agotado');return;}
+  selZone=null;qty=1;payMethod='card';
+  // resumen
   document.getElementById('coEvent').textContent=e.t;
-  document.getElementById('coDetail').textContent=`${z.n} · ${qty} entrada${qty>1?'s':''}`;
-  document.getElementById('coPrice').textContent=total===0?'Gratis':'S/'+total;
+  document.getElementById('coDetail').textContent=`${e.dateLabel} · ${e.time} · ${e.venue}`;
   const ct=document.getElementById('coThumb');ct.textContent=CAT[e.cat].emoji;
   getWikiImg(e.wiki||e.vwiki,src=>{if(src)ct.innerHTML=`<img src="${src}" style="width:100%;height:100%;object-fit:cover;border-radius:10px;">`;});
-  document.getElementById('coForm').style.display='block';
+  // construir zonas
+  const zones=coZonesList(e);
+  document.getElementById('coZones').innerHTML=zones.map((z,i)=>`
+    <div class="zone" id="coz_${i}" onclick="selectCoZone(${i})">
+      <div class="zone-check">✓</div>
+      <div class="zone-n">${z.n}</div>
+      <div class="zone-p">${z.p===0?'Gratis':'S/'+z.p}</div>
+      <div class="zone-a">${z.p===0?'Entrada libre':'Disponible'}</div>
+    </div>`).join('');
+  document.getElementById('coQn').textContent='1';
+  // autoseleccionar si solo hay una zona
+  if(zones.length===1)selectCoZone(0); else {document.getElementById('coTotal1').textContent='Elige zona';document.getElementById('coNext').style.opacity='.55';}
+  goCoStep(1);
   document.getElementById('coSuccess').classList.remove('show');
   document.getElementById('checkout').classList.add('open');
 }
 window.openCheckout=openCheckout;
 function closeCheckout(){document.getElementById('checkout').classList.remove('open');}
 window.closeCheckout=closeCheckout;
-function pickPay(el,m){payMethod=m;document.querySelectorAll('.pm').forEach(p=>p.classList.remove('sel'));el.classList.add('sel');document.getElementById('cardFields').style.display=m==='card'?'block':'none';document.getElementById('yapeFields').style.display=m==='yape'?'block':'none';}
+
+function selectCoZone(i){
+  const zones=coZonesList(modalEvt);
+  selZone={...zones[i],i};
+  document.querySelectorAll('#coZones .zone').forEach((z,j)=>z.classList.toggle('sel',j===i));
+  updateCoTotal();
+}
+window.selectCoZone=selectCoZone;
+function coQty(d){qty=Math.max(1,Math.min(10,qty+d));document.getElementById('coQn').textContent=qty;updateCoTotal();}
+window.coQty=coQty;
+function coTotalValue(){if(!selZone)return null;const base=selZone.p*qty;const fee=selZone.p===0?0:FEE*qty;return base+fee;}
+function updateCoTotal(){
+  const t=coTotalValue();
+  const el1=document.getElementById('coTotal1'),el2=document.getElementById('coTotal2'),nx=document.getElementById('coNext');
+  if(t===null){if(el1)el1.textContent='Elige zona';if(nx){nx.style.opacity='.55';}return;}
+  const lbl=t===0?'Gratis':'S/'+t;
+  if(el1)el1.textContent=lbl;if(el2)el2.textContent=lbl;if(nx)nx.style.opacity='1';
+  const fee=selZone.p===0?0:FEE*qty;
+  const sub=document.querySelector('#coStep1 .ticket-total .tt-sub');
+  if(sub)sub.textContent=`Incluye IGV · cargo por servicio S/${fee}`;
+}
+function goCoStep(n){
+  if(n===2&&!selZone){toast('Primero elige una zona');return;}
+  document.getElementById('coStep1').style.display=n===1?'block':'none';
+  document.getElementById('coStep2').style.display=n===2?'block':'none';
+  document.getElementById('coSuccess').classList.toggle('show',n===3);
+  // step bar
+  const s1=document.getElementById('coSi1'),s2=document.getElementById('coSi2'),s3=document.getElementById('coSi3');
+  s1.className='co-stepi'+(n===1?' on':' done');
+  s2.className='co-stepi'+(n===2?' on':(n>2?' done':''));
+  s3.className='co-stepi'+(n===3?' on':'');
+  if(n===2)updateCoTotal();
+}
+window.goCoStep=goCoStep;
+
+function pickPay(el,m){
+  payMethod=m;document.querySelectorAll('.pm').forEach(p=>p.classList.remove('sel'));el.classList.add('sel');
+  document.getElementById('cardFields').style.display=m==='card'?'block':'none';
+  document.getElementById('yapeFields').style.display=m==='yape'?'block':'none';
+  document.getElementById('bankFields').style.display=m==='bank'?'block':'none';
+  document.getElementById('cashFields').style.display=m==='cash'?'block':'none';
+}
 window.pickPay=pickPay;
 function fmtCard(i){let v=i.value.replace(/\D/g,'').slice(0,16);i.value=v.match(/.{1,4}/g)?.join(' ')||v;}
 function fmtExp(i){let v=i.value.replace(/\D/g,'').slice(0,4);if(v.length>2)v=v.slice(0,2)+'/'+v.slice(2);i.value=v;}
 window.fmtCard=fmtCard;window.fmtExp=fmtExp;
+const PAYLBL={card:'Tarjeta',yape:'Yape / Plin',bank:'Banca online',cash:'Agente / Efectivo'};
 function processPay(){
-  const btn=document.getElementById('payBtn');btn.textContent='Procesando pago…';btn.style.opacity='.7';
+  const btn=document.getElementById('payBtn');const orig=btn.innerHTML;
+  btn.innerHTML='Procesando pago…';btn.style.opacity='.7';btn.disabled=true;
   setTimeout(()=>{
-    const e=modalEvt,z=selZone||{n:'Entrada general',p:e.min};
-    document.getElementById('coForm').style.display='none';
-    document.getElementById('coSuccess').classList.add('show');
+    const e=modalEvt,z=selZone||{n:'Entrada general',p:e.min};const t=coTotalValue();
+    goCoStep(3);
     document.getElementById('etEvent').textContent=e.t;
     document.getElementById('etZone').textContent=z.n;
     document.getElementById('etQty').textContent=qty+(qty>1?' entradas':' entrada');
     document.getElementById('etDate').textContent=e.dateLabel;
     document.getElementById('etVenue').textContent=e.venue;
+    document.getElementById('etTotal').textContent=t===0?'Gratis':'S/'+t;
+    document.getElementById('etMethod').textContent=PAYLBL[payMethod]||'Tarjeta';
     document.getElementById('etCode').textContent='SCENA · '+Math.random().toString(36).slice(2,7).toUpperCase()+'-'+Math.random().toString(36).slice(2,7).toUpperCase();
-    btn.textContent='Pagar ahora';btn.style.opacity='1';
+    btn.innerHTML=orig;btn.style.opacity='1';btn.disabled=false;
     toast('🎉 ¡Compra confirmada! Revisa tu correo');
-  },1800);
+  },1700);
 }
 window.processPay=processPay;
 
@@ -1440,6 +1628,13 @@ function reveal(){
 }
 function toggleDrawer(){document.getElementById('drawer').classList.toggle('open');}
 window.toggleDrawer=toggleDrawer;
+function buildDistrictOptions(){
+  const sel=document.getElementById('district');if(!sel)return;
+  const counts={};EVENTS.forEach(e=>counts[e.district]=(counts[e.district]||0)+1);
+  const dists=Object.keys(counts).sort((a,b)=>a.localeCompare(b));
+  sel.innerHTML='<option value="all">📍 Todos los distritos</option>'+
+    dists.map(d=>`<option value="${d}">${d} (${counts[d]})</option>`).join('');
+}
 
 /* ════════════════════════════════════════════════════════════════
    INIT
@@ -1447,6 +1642,7 @@ window.toggleDrawer=toggleDrawer;
 document.addEventListener('DOMContentLoaded',()=>{
   preloadAllImages();
   buildHero();
+  buildDistrictOptions();
   applyFilters();
   buildDistChart();
   reveal();
